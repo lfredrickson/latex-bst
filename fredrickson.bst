@@ -381,7 +381,7 @@ FUNCTION {format.eprint}
      { archive empty$
           {"\href{http://arxiv.org/abs/" eprint * "}" * 
              "{{\ttfamily " * format.archive * eprint *
-              format.primaryClass * "}}" *}
+               "}}" *}
           {"\href{" archive *  "/" * eprint * "}" * 
              "{{\ttfamily " * format.archive * eprint *
               format.primaryClass * "}}" *}
@@ -811,7 +811,7 @@ FUNCTION {article}
   blank.sep
   crossref missing$
   { journal missing$   
-        {}
+        { format.date.paren *}
         { format.journal add.doi "journal" output.check}
       if$
     report missing$
